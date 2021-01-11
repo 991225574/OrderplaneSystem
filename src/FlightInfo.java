@@ -5,6 +5,7 @@ public class FlightInfo {
     private String fromCity;    //始发站
     private String toCity;      //到达站
     private Date fromDate;      //出发时间
+    private String flighttype;  //航班型号
 
     public String getId() {
         return id;
