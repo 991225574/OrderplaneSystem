@@ -1,3 +1,8 @@
+package cn.edu.hcnu.bean;
+
+/*
+订单详情
+ */
 public class Order {
         private String id;
         private float jpjg; //机票价格
@@ -7,6 +12,7 @@ public class Order {
         private float jptgx;     //机票退改险
         private float yhq;       //优惠券
         private float hszj;      //含税总价
+
         private Customer customer[];
 
     public String getId() {

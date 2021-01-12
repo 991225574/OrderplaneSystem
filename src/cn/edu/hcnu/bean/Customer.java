@@ -1,3 +1,5 @@
+package cn.edu.hcnu.bean;
+
 //课程
 public class Customer {
     private String id;       //乘客id
