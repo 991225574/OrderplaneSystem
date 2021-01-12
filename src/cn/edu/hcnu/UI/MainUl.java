@@ -10,8 +10,7 @@ import java.util.UUID;
 public class MainUl {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        String test= scanner.next();
-        System.out.println(test);
+        System.out.println("插入航班信息按：1");
         while(true){
 
             System.out.println("请选择相应的序号选择：");

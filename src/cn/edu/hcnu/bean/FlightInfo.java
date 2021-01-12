@@ -18,37 +18,42 @@ public class FlightInfo {
         this.toCity = toCity;
         this.fromDate = fromDate;
     }
-
-    public String getId() {
-        return id;
+//重写toString
+    public String toString(){
+        return this.id+this.flightId+this.flighttype+this.fromCity+this.toCity+this.fromDate;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getFromCity() {
-        return fromCity;
-    }
-
-    public void setFromCity(String fromCity) {
-        this.fromCity = fromCity;
-    }
-
-    public String getToCity() {
-        return toCity;
-    }
-
-    public void setToCity(String toCity) {
-        this.toCity = toCity;
-    }
-
-    public String getFromDate() {
-        return fromDate;
-    }
-
-    public void setFromDate(String fromDate) {
-        this.fromDate = fromDate;
-    }
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+//
+//    public String getFromCity() {
+//        return fromCity;
+//    }
+//
+//    public void setFromCity(String fromCity) {
+//        this.fromCity = fromCity;
+//    }
+//
+//    public String getToCity() {
+//        return toCity;
+//    }
+//
+//    public void setToCity(String toCity) {
+//        this.toCity = toCity;
+//    }
+//
+//    public String getFromDate() {
+//        return fromDate;
+//    }
+//
+//    public void setFromDate(String fromDate) {
+//        this.fromDate = fromDate;
+//    }
 
 }

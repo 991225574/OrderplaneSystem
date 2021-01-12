@@ -9,7 +9,7 @@ public class FlightServiceImp implements IflightService {
 
     @Override
     public void insertFlight(FlightInfo flight) {
-        System.out.println(flight);
+        System.out.println(flight.toString());
     }
 
     @Override
