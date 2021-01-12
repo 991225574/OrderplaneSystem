@@ -3,11 +3,21 @@ package cn.edu.hcnu.bean;
 import java.util.Date;
 
 public class FlightInfo {
-    private String id;
+    private String id;            //主键id
+    private String flightId;     //航班编号
+    private String flighttype;  //航班型号
     private String fromCity;    //始发站
     private String toCity;      //到达站
-    private Date fromDate;      //出发时间
-    private String flighttype;  //航班型号
+    private String fromDate;      //出发时间
+
+    public FlightInfo(String id, String flightId, String flighttype, String fromCity, String toCity, String fromDate) {
+        this.id = id;
+        this.flightId = flightId;
+        this.flighttype = flighttype;
+        this.fromCity = fromCity;
+        this.toCity = toCity;
+        this.fromDate = fromDate;
+    }
 
     public String getId() {
         return id;
@@ -33,11 +43,12 @@ public class FlightInfo {
         this.toCity = toCity;
     }
 
-    public Date getFromDate() {
+    public String getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(Date fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
     }
+
 }
