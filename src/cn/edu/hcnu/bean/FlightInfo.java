@@ -21,19 +21,8 @@ public class FlightInfo {
 //        this.fromDate = fromDate;
 //    }
 
-    @Override
-    public String toString() {
-        return "FlightInfo{" +
-                "flightId='" + flightId + '\'' +
-                ", flighttype='" + flighttype + '\'' +
-                ", CurrentSeatsNum=" + CurrentSeatsNum +
-                ", fromCity='" + fromCity + '\'' +
-                ", toCity='" + toCity + '\'' +
-                ", fromDate='" + fromDate + '\'' +
-                '}';
-    }
-
-    public FlightInfo(String flightId, String flighttype, int currentSeatsNum, String fromCity, String toCity, String fromDate) {
+    public FlightInfo(String id, String flightId, String flighttype, int currentSeatsNum, String fromCity, String toCity, String fromDate) {
+        this.id = id;
         this.flightId = flightId;
         this.flighttype = flighttype;
         CurrentSeatsNum = currentSeatsNum;
@@ -41,11 +30,18 @@ public class FlightInfo {
         this.toCity = toCity;
         this.fromDate = fromDate;
     }
-    //重写toString 输出刚才录入信息
-//    public String toString(){
-//        return this.id+this.flightId+this.flighttype+this.fromCity+this.toCity+this.fromDate;
-//    }
 
+    @Override
+    public String toString() {
+        return "FlightInfo{" +
+                ", 航班ID='" + flightId + '\'' +
+                ", 航班类型='" + flighttype + '\'' +
+                ", 座位数量=" + CurrentSeatsNum +
+                ", 起始城市='" + fromCity + '\'' +
+                ", 到达城市='" + toCity + '\'' +
+                ", 发机时间='" + fromDate + '\'' +
+                '}';
+    }
 
     public String getId() {
         return id;

@@ -8,25 +8,25 @@ import cn.edu.hcnu.dao.imp.FlightDaoIml;
 import java.sql.SQLException;
 import java.util.Set;
 
+//
 public class FlightServiceImp implements IflightService {
 
-//    IFlightDao iflight;  //定义全局变量
-//
-//    public void FlightDao(){
-//        iflight=new FlightDaoIml();
-//    }
+    IFlightDao iFlightDao;  //定义全局变量
+
+    //构造方法new数据访问层对象
+    public FlightServiceImp(){
+        iFlightDao=new FlightDaoIml();
+    }
 
     @Override
     public void insertFlight(FlightInfo flight) throws SQLException {
-//        System.out.println("imp层"+flight);
-//        iflight.insertFlight(flight);
-          IFlightDao iFlightDao=new FlightDaoIml();
+        //传值dao层
           iFlightDao.insertFlight(flight);
     }
 
     @Override
-    public Set<FlightInfo> getAllFlights() {
-        return null;
+    public Set<FlightInfo> getAllFlights() throws SQLException {
+        return iFlightDao.getAllFlights(); //获取到层的容器值
     }
 
     @Override
