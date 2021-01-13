@@ -11,9 +11,12 @@ import java.util.UUID;
 public class MainUl {
     public static void main(String[] args) throws SQLException {
         Scanner scanner=new Scanner(System.in);
-        System.out.println("插入航班信息按：1");
-        while(true){
+        System.out.println("-----------菜单------------");
+        System.out.println("| 插入航班信息按：1         |");
+        System.out.println("---------------------------");
 
+
+        while(true){
             System.out.println("请选择相应的序号选择：");
             int result=scanner.nextInt();
 
