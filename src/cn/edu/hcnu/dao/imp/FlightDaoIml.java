@@ -63,10 +63,9 @@ public class FlightDaoIml implements IFlightDao {
             //然后把new的引用地址存到容器里面
             allFlightInfos.add(flightInfo);
 
-            return allFlightInfos;   //返回容器值
-
         }
-        return null;
+//        return null;
+            return allFlightInfos;   //返回容器值
     }
 
     @Override

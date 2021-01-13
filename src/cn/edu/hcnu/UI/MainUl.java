@@ -75,10 +75,15 @@ public class MainUl {
                 //获取业务层的得到容器值
                 IflightService iflightService=new FlightServiceImp();
                 try{
-                    //定义容器
-//                    Set
-                }catch (Exception e){
+                    //定义容器 且设置FlightInfo类型
+                    Set<FlightInfo> allFlights=iflightService.getAllFlights();
+                    //Set 的便利需要迭代器
 
+                    for(FlightInfo flightInfo:allFlights){
+                        System.out.println(flightInfo);
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
                 }
 
             }
