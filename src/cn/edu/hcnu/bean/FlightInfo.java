@@ -20,7 +20,7 @@ public class FlightInfo {
 //        this.toCity = toCity;
 //        this.fromDate = fromDate;
 //    }
-
+    //显示全部航班信息
     public FlightInfo(String id, String flightId, String flighttype, int currentSeatsNum, String fromCity, String toCity, String fromDate) {
         this.id = id;
         this.flightId = flightId;
@@ -31,17 +31,43 @@ public class FlightInfo {
         this.fromDate = fromDate;
     }
 
+    //显示没有id的航班信息
+
+
+    public FlightInfo(String flightId, String flighttype, int currentSeatsNum, String fromCity, String toCity, String fromDate) {
+        this.flightId = flightId;
+        this.flighttype = flighttype;
+        CurrentSeatsNum = currentSeatsNum;
+        this.fromCity = fromCity;
+        this.toCity = toCity;
+        this.fromDate = fromDate;
+    }
+
     @Override
     public String toString() {
-        return "FlightInfo{" +
-                ", 航班ID='" + flightId + '\'' +
-                ", 航班类型='" + flighttype + '\'' +
-                ", 座位数量=" + CurrentSeatsNum +
-                ", 起始城市='" + fromCity + '\'' +
-                ", 到达城市='" + toCity + '\'' +
-                ", 发机时间='" + fromDate + '\'' +
+        return "航班信息{" +
+                "id='" + id + '\'' +
+                ", flightId='" + flightId + '\'' +
+                ", flighttype='" + flighttype + '\'' +
+                ", CurrentSeatsNum=" + CurrentSeatsNum +
+                ", fromCity='" + fromCity + '\'' +
+                ", toCity='" + toCity + '\'' +
+                ", fromDate='" + fromDate + '\'' +
                 '}';
     }
+
+//    @Override
+
+//    public String toString() {
+//        return "FlightInfo{" +
+//                ", 航班ID='" + flightId + '\'' +
+//                ", 航班类型='" + flighttype + '\'' +
+//                ", 座位数量=" + CurrentSeatsNum +
+//                ", 起始城市='" + fromCity + '\'' +
+//                ", 到达城市='" + toCity + '\'' +
+//                ", 发机时间='" + fromDate + '\'' +
+//                '}';
+//    }
 
     public String getId() {
         return id;

@@ -24,14 +24,16 @@ public class FlightServiceImp implements IflightService {
           iFlightDao.insertFlight(flight);
     }
 
+    //获取所有航班信息
     @Override
     public Set<FlightInfo> getAllFlights() throws SQLException {
         return iFlightDao.getAllFlights(); //获取到层的容器值
     }
 
+    //按照时间查询且返回值
     @Override
-    public FlightInfo getFlightByDepartureTime(String departureTime) {
-        return null;
+    public FlightInfo getFlightByDepartureTime(String departureTime) throws SQLException {
+        return iFlightDao.getFlightByDepartureTime(departureTime);
     }
 
     @Override

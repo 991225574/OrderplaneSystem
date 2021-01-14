@@ -13,7 +13,7 @@ public class FlightDaoIml implements IFlightDao {
     //连接数据库，录入航班数据
     @Override
     public void insertFlight(FlightInfo flight) throws SQLException {
-        System.out.println("dao层"+flight);
+//        System.out.println("dao层"+flight);
         String url="jdbc:oracle:thin:@localhost:1521:orcl";
         String username="SCOtt";
         String password="123";
@@ -31,11 +31,11 @@ public class FlightDaoIml implements IFlightDao {
         pre.setString(5,flight.getFromCity());
         pre.setString(6,flight.getToCity());
         pre.setString(7,flight.getFromDate());
-
 //        执行sql语句
         pre.executeUpdate();
     }
 
+    //查询所有的航班信息
     @Override
     public Set<FlightInfo> getAllFlights() throws SQLException {
         Set<FlightInfo> allFlightInfos=new HashSet<FlightInfo>();  //定义FlightInfo类容器
@@ -68,9 +68,42 @@ public class FlightDaoIml implements IFlightDao {
             return allFlightInfos;   //返回容器值
     }
 
+    //按照时间查询 且返回值
     @Override
-    public FlightInfo getFlightByDepartureTime(String departureTime) {
-        return null;
+    public FlightInfo getFlightByDepartureTime(String departureTime) throws SQLException {
+        String url="jdbc:oracle:thin:@localhost:1521:orcl";
+        String username="Scott";
+        String pass="123";
+        //创建连接
+        Connection con=DriverManager.getConnection(url,username,pass);
+        //定义sql语句
+        String sql="SELECT FLIGHT_ID,PLANE_TYPE,TOTAL_SEATS_NUM,DEPARTURE_AIRPORT,DESTINATION_AIRPORT,DEPARTURE_TIME FROM flight where DEPARTURE_TIME=?";  //定义sql语句
+        //准备sql语句
+        PreparedStatement pre=con.prepareStatement(sql);
+        //绑定sql参数
+        pre.setString(1,departureTime);
+        //获取返回值
+        ResultSet re=pre.executeQuery();
+
+        //定义全局变量
+        FlightInfo flightInfo = null;
+
+        //循环输出每条对象内容
+        while (re.next()){
+            String flightId=re.getString("FLIGHT_ID");
+            String flighttype=re.getString("PLANE_TYPE");
+            int CurrentSeatsNum=re.getInt("TOTAL_SEATS_NUM");
+            String fromCity=re.getString("DEPARTURE_AIRPORT");
+            String toCity=re.getString("DESTINATION_AIRPORT");
+            String fromDate=re.getString("DEPARTURE_TIME");
+
+            //每次把对象值存到flight里面
+            flightInfo=new FlightInfo(flightId,flighttype,CurrentSeatsNum,fromCity,toCity,fromDate);
+            //然后把new的引用地址存到容器里面
+
+        }
+        return flightInfo;//返回值
+
     }
 
     @Override
